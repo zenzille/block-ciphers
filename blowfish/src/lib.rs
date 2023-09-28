@@ -23,7 +23,7 @@ pub use cipher;
 
 use byteorder::{ByteOrder, BE, LE};
 use cipher::{
-    consts::{U56, U8},
+    consts::{U32, U8},
     AlgorithmName, BlockCipher, InvalidLength, Key, KeyInit, KeySizeUser,
 };
 use core::fmt;
@@ -123,7 +123,7 @@ impl<T: ByteOrder> Blowfish<T> {
 impl<T: ByteOrder> BlockCipher for Blowfish<T> {}
 
 impl<T: ByteOrder> KeySizeUser for Blowfish<T> {
-    type KeySize = U56;
+    type KeySize = U32;
 }
 
 impl<T: ByteOrder> KeyInit for Blowfish<T> {
